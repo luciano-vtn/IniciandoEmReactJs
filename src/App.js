@@ -1,25 +1,66 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import Item from './components/itens';
+import Card from './components/card';
+
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    //<h1>Inicio do projeto React App</h1> => pode ser iniciado assim.
+    // para ter componentes pai e filhos deve ser usado <div> ou "react fragment <> </>"
+    // exemplo abaixo.
+
+    // ASSIM
+
+    // <div>
+    //   <h1>Inicio do projeto React App</h1>
+    //   <p>Descrição do projeto React.</p>
+    // </div>
+
+
+    // OU ASSIM "REACT FRAGMENTE"
+
+    <>
+      <h1>Inicio do projeto React App</h1>
+      <p>Para estudar :</p>
+      <ul>
+            {/* Usando a importação de componentes 
+            (PRESTAR A ATENÇÃO DE COMO CHAMAR O => ITEM ==>> [ <Item / >]) a BARRA VEM DEPOIS */}  
+
+          {/* Aqui foi usado a    {props.text} */}
+                  {/*  <Item text=' Payton'/> 
+                  <Item text='Java'/>
+                  <Item text='Ruby'/> */}
+
+           {/* Aqui a {props.children} */}
+                  <Item>
+                    Payton
+                  </Item>
+                  <Item>
+                    Java
+                  </Item>
+                  <Item>
+                    Ruby
+                  </Item>
+      </ul>
+
+      <Card />
+
+      </>
+
+    ) 
+
 }
 
 export default App;
+
+
+/* outra forma de declarar.
+
+export default function App () {
+  
+  return (
+    <h1> seu texto </h1>
+  )
+}
+
+*/
